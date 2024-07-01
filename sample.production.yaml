@@ -1,0 +1,35 @@
+httpPort: 8000
+maxBodySize: 1048576
+staticFileDir: static
+localWorker: false
+timeoutWorker: false
+maxRuntimeSec: 8
+contestTimes:
+  contestStart: 2024-06-28T12:00:00Z
+  lightningEnd: 2024-06-29T12:00:00Z
+  contestEnd: 2099-12-31T12:00:00Z # Let it go on forever. Or, if this is too short, feel free to change it, great-grandson
+  freezeMarginHour: 2
+redisConfig:
+  connectionString: redis://
+  poolSize: 100
+dbConfig:
+  dbHost: 127.0.0.1
+  dbPort: 3306
+  dbUser: icfpc2024
+  dbPassword: ""
+  dbDatabase: icfpc2024
+  dbPoolSize: 100
+storageConfig:
+  s3Key: s3key
+  s3Secret: s3secret
+  s3Region: ams3
+  s3Endpoint: ams3.digitaloceanspaces.com
+  requestBucket: icfpc2024-requests
+  responseBucket: icfpc2024-responses
+rateLimit:
+  timeFrameSec: 60
+  maxRequests: 20
+logging:
+  directory: /var/log/icfpc2024
+  fileSize: 20971520
+  backupNumber: 1000

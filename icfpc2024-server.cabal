@@ -1,0 +1,101 @@
+cabal-version:      2.4
+name:               icfpc2024-server
+version:            0.1.0.0
+author:             Jeroen Bransen
+
+flag production
+     description: Make a production build
+     default: False
+     manual: True
+
+executable icfpc2024-server
+    main-is:            Main.hs
+    other-modules:      ICFPC2024.API
+                        ICFPC2024.API.Types
+                        ICFPC2024.Communication
+                        ICFPC2024.Config
+                        ICFPC2024.Database
+                        ICFPC2024.Database.Connection
+                        ICFPC2024.Database.Queries
+                        ICFPC2024.Database.Table
+                        ICFPC2024.Environment
+                        ICFPC2024.ObjectStorage
+                        ICFPC2024.ObjectStorage.Environment
+                        ICFPC2024.Puzzles
+                        ICFPC2024.Puzzles.Efficiency
+                        ICFPC2024.Puzzles.Efficiency.Static
+                        ICFPC2024.Puzzles.Hello
+                        ICFPC2024.Puzzles.Hello.Static
+                        ICFPC2024.Puzzles.Helpers
+                        ICFPC2024.Puzzles.Helpers.Static
+                        ICFPC2024.Puzzles.Lambdaman
+                        ICFPC2024.Puzzles.Lambdaman.Static
+                        ICFPC2024.Puzzles.Spaceship
+                        ICFPC2024.Puzzles.Spaceship.Static
+                        ICFPC2024.Puzzles.Static
+                        ICFPC2024.Puzzles.ThreeD
+                        ICFPC2024.Puzzles.ThreeD.Static
+                        ICFPC2024.Scoring
+                        ICFPC2024.Static
+    default-extensions: OverloadedStrings
+                        RankNTypes
+                        ScopedTypeVariables
+                        NumericUnderscores
+                        LambdaCase
+                        DeriveGeneric
+                        Strict
+                        DataKinds
+                        CPP
+    build-depends:      aeson,
+                        aeson-casing,
+                        base,
+                        binary,
+                        bytestring,
+                        containers,
+                        directory,
+                        esqueleto,
+                        exceptions,
+                        fast-logger,
+                        filepath,
+                        http-api-data,
+                        http-types,
+                        icfpc2024,
+                        lucid,
+                        mmark,
+                        monad-logger,
+                        mtl,
+                        mustache,
+                        password,
+                        password-instances,
+                        persistent,
+                        pureMD5,
+                        random,
+                        resource-pool,
+                        text,
+                        time,
+                        ttop,
+                        unliftio-core,
+                        uuid,
+                        wai,
+                        wai-extra,
+                        warp,
+                        yaml,
+    hs-source-dirs:     .
+    default-language:   Haskell2010
+    ghc-options:        -Wall -Wunused-packages -O2 -threaded -rtsopts
+
+    -- if we make a build for local testing, we don't need all those packages
+    if flag(production)
+      cpp-options: -DPRODUCTION
+      build-depends: amazonka,
+                     amazonka-s3,
+                     conduit,
+                     lens,
+                     mysql-haskell,
+                     persistent-mysql-haskell,
+                     redis-schema,
+                     signal,
+                     resourcet,
+      other-modules: ICFPC2024.API.RateLimit
+    else
+      build-depends: persistent-sqlite

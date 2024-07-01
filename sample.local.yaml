@@ -1,0 +1,15 @@
+httpPort: 8000
+maxBodySize: 1048576
+staticFileDir: static
+maxRuntimeSec: 8
+contestTimes:
+  contestStart: 2024-06-28T12:00:00Z
+  lightningEnd: 2024-06-29T12:00:00Z
+  contestEnd: 2099-12-31T12:00:00Z # Let it go on forever. Or, if this is too short, feel free to change it, great-grandson
+  freezeMarginHour: 2
+dbConfig:
+  dbPoolSize: 10
+  dbConnectionString: db.sqlite
+storageConfig:
+  directory: storage
+logging: stdout

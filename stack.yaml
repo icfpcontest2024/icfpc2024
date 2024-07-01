@@ -1,0 +1,9 @@
+resolver: lts-21.22
+packages:
+  - .
+  - interpreter
+  - ttop
+
+flags:
+  icfpc2024-server:
+    production: false

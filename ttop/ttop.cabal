@@ -1,0 +1,94 @@
+cabal-version:      2.4
+name:               ttop
+version:            0.1.0.0
+
+-- A short (one-line) description of the package.
+synopsis: Time-travel oriented programming
+
+-- A longer description of the package.
+-- description:
+
+-- A URL where users can report bugs.
+-- bug-reports:
+
+-- The license under which the package is released.
+-- license:
+author:             Matus Tejiscak
+maintainer:         ziman@functor.sk
+
+-- A copyright notice.
+-- copyright:
+-- category:
+
+library
+    exposed-modules:
+       TTop
+       TTop.Board
+       TTop.History
+       TTop.Bimap
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    default-extensions:
+        ApplicativeDo,
+        DataKinds,
+        DefaultSignatures,
+        DeriveAnyClass,
+        DerivingStrategies,
+        DerivingVia,
+        DuplicateRecordFields,
+        GADTs,
+        LambdaCase,
+        MultiWayIf,
+        OverloadedLabels,
+        OverloadedRecordDot,
+        OverloadedStrings,
+        OverloadedLists,
+        QuantifiedConstraints,
+        Strict,
+        TypeFamilies,
+        ViewPatterns,
+        PartialTypeSignatures
+    build-depends:
+        base,
+        transformers,
+        containers,
+        bytestring
+    hs-source-dirs:   src
+    default-language: GHC2021
+    ghc-options: -Wall -Wunused-packages -O2
+
+executable ttop
+    main-is: Main.hs
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    default-extensions:
+        ApplicativeDo,
+        DataKinds,
+        DefaultSignatures,
+        DeriveAnyClass,
+        DerivingStrategies,
+        DerivingVia,
+        DuplicateRecordFields,
+        GADTs,
+        LambdaCase,
+        MultiWayIf,
+        OverloadedLabels,
+        OverloadedRecordDot,
+        OverloadedStrings,
+        OverloadedLists,
+        QuantifiedConstraints,
+        Strict,
+        TypeFamilies,
+        ViewPatterns,
+        PartialTypeSignatures
+    build-depends:
+        base,
+        ttop,
+        bytestring,
+        optparse-applicative
+    hs-source-dirs: src-main
+    default-language: GHC2021
+    ghc-options: -Wall -Wunused-packages -O2
+
+-- vim: et sw=4 ts=4 sts=4

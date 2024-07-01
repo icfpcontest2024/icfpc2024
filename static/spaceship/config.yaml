@@ -1,0 +1,127 @@
+# 01. simple 5-step random walk
+# solvable with pen and paper
+# or any inefficient method
+spaceship1:
+  file: spaceship1.txt
+
+# 02. a long random walk
+# still nice and friendly,
+# but you can't use exponential methods anymore
+spaceship2:
+  file: spaceship2.txt
+
+# 03. short random walk
+# all points present but shuffled
+# also, points not repeated
+spaceship3:
+  file: spaceship3.txt
+
+# 04. long random walk
+# all points present but shuffled
+# also, points not repeated
+spaceship4:
+  file: spaceship4.txt
+
+# 05. long random walk
+# not shuffled
+# but 1 in 10 points skipped
+spaceship5:
+  file: spaceship5.txt
+
+# 06. long random walk
+# shuffled
+# 1 in 4 points skipped
+spaceship6:
+  file: spaceship6.txt
+
+# 07. long-ish random walk
+# not shuffled but accelerations range between ±2
+spaceship7:
+  file: spaceship7.txt
+
+# 08. long-ish random walk
+# not shuffled but there's (tiny but annoying) jitter in positions
+spaceship8:
+  file: spaceship8.txt
+
+# 09. long random walk
+# shuffled, weird accelerations, jitter
+spaceship9:
+  file: spaceship9.txt
+
+# 10. long random walk
+# shuffled, very weird accelerations, large jitter
+spaceship10:
+  file: spaceship10.txt
+
+# 11. extremely long random walk
+# tame, unshuffled, just long
+spaceship11:
+  file: spaceship11.txt
+
+# 12. extremely long random walk
+# tame, shuffled
+spaceship12:
+  file: spaceship12.txt
+
+# 13. extremely long random walk
+# shuffled, jittered
+spaceship13:
+  file: spaceship13.txt
+
+# 14. a nice normal difference-of-difference-able route
+# BUT you start with non-zero offset and velocity
+# so first you need to build a "runway", get up to speed
+# to be at the right place with the right velocity
+# and from then onwards it's difference of differences
+spaceship14:
+  file: spaceship14.txt
+
+# 15. a random scatter
+spaceship15:
+  file: spaceship15.txt
+
+# 16. a bigger scatter
+spaceship16:
+  file: spaceship16.txt
+
+# 17. a bigger scatter, sparse
+spaceship17:
+  file: spaceship17.txt
+
+# 18. a huge scatter, sparse
+# too big to traverse row-by-row
+# pretty much entirely TSP
+spaceship18:
+  file: spaceship18.txt
+
+# 19. a small scatter, dense
+# we don't solve this, it's obvious that a solution exists
+# (scan row by row at worst -> 10k moves)
+# but my algorithms don't work well here
+spaceship19:
+  file: spaceship19.txt
+
+# Stolen from https://codeweekend.dev/
+spaceship20:
+  file: spiral1.txt
+# Stolen from https://codeweekend.dev/
+spaceship21:
+  file: spiral2.txt
+
+# Looks nice, and it contains a hint for the efficiency backdoor
+spaceship22:
+  expression: lambda.icfp
+
+# 23. humongous random walk
+# shuffled, jittered a lot
+spaceship23:
+  file: spaceship23.txt
+
+# big distances, small number of points
+spaceship24:
+  file: spaceship24.txt
+
+# shorter distances, big number of points
+spaceship25:
+  file: spaceship25.txt

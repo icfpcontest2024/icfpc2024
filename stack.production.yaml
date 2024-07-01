@@ -1,0 +1,39 @@
+resolver: lts-21.22
+packages:
+  - .
+  - interpreter
+  - ttop
+
+flags:
+  icfpc2024-server:
+    production: true
+
+# Needed for MariaDB
+allow-newer: true
+allow-newer-deps:
+- mysql-haskell
+
+extra-deps:
+  # To properly connect to MariaDB
+  - git: https://github.com/chordify/persistent.git
+    commit: cf735587e590369e62168dacc2c3c2411493ae6d
+    subdirs:
+      - persistent-mysql-haskell
+  - git: https://github.com/chordify/mysql-haskell.git
+    commit: f3a16e52d7b72c35b4a4fd3fdc4bb4d02ea61108
+  - git: https://github.com/chordify/binary-parsers.git
+    commit: 55dda0cc0fffc68a558ef87326c6c09327a79fd3
+  - git: https://github.com/chordify/wire-streams.git
+    commit: a94d0c5c54b5f9028ddb23d1742d01092788ee3c
+  - git: https://github.com/winterland1989/word24.git
+    commit: 445f791e35ddc8098f05879dbcd07c41b115cb39
+  # For remote-job
+  - git: https://github.com/chordify/redis-schema.git
+    commit: 9b84cd8cb18b0b2af5f67a9fe530aea33b9c2eb2
+  - monadIO-0.11.1.0@sha256:2407c8aee3a74f3eba897f7c87f702f502394aec8cd412f3d2334cc353f54f13,964
+  # For object storage
+  - amazonka-2.0@sha256:3481da2fda6b210d15d41c1db7a588adf68123cfb7ea3882797a6230003259db,3505
+  - amazonka-s3-2.0@sha256:e3143e11ab9e57ee0dfd9d1dd95a44c5b4a7d34af78c8f5b2e6c00afad118a02,13853
+  - amazonka-core-2.0@sha256:d9f0533c272ac92bd7b18699077038b6b51b3552e91b65743af4ce646286b4f8,4383
+  - amazonka-sso-2.0@sha256:902be13b604e4a3b51a9b8e1adc6a32f42322ae11f738a72a8c737b2d0a91a5e,2995
+  - amazonka-sts-2.0@sha256:5c721083e8d80883a893176de6105c27bbbd8176f467c27ac5f8d548a5e726d8,3209

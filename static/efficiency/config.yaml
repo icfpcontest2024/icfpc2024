@@ -1,0 +1,68 @@
+# forkbomb, can be evaluated
+efficiency1:
+  expression: forkbomb.icfp
+  answer: 17592186044416
+
+# 2134+<complex>*0
+efficiency2:
+  expression: efficiency2.icfp
+  answer: 2134
+
+# slow +1
+efficiency3:
+  expression: efficiency3.icfp
+  answer: 9345875634
+
+# fib(40)
+efficiency4:
+  expression: efficiency4.icfp
+  answer: 165580141
+
+# Mersenne prime
+efficiency5:
+  expression: efficiency5.icfp
+  answer: 2147483647
+
+# Fibonacci prime, returns the n (but computes 433494437 and tries linear primality check)
+# The list has an off-by-one by design, so that it is harder to recognize the sequence
+# (and 42 is the perfect answer)
+efficiency6:
+  expression: efficiency6.icfp
+  answer: 42
+
+# sat with unique solution and 40 vars
+efficiency7:
+  expression: efficiency7.icfp
+  answer: 584302217761
+
+# sat with multiple solutions and 50 vars
+efficiency8:
+  expression: efficiency8.icfp
+  answer: 422607674157562
+
+# Lexicographically smallest sudoku
+efficiency9:
+  expression: efficiency9.icfp
+  answer: 3072297283032850841637141056325154790039828427723724157541484782406577456068
+
+# Sudoku with unique solution, from
+# https://www.websudoku.com/images/example-steps.html
+efficiency10:
+  expression: efficiency10.icfp
+  answer: 14967753016278151754281739121556345272360285170537031718346799308781591772932
+
+# Sudoku with multiple solutions, the lexicographically smallest is the answer
+efficiency11:
+  expression: efficiency11.icfp
+  answer: 100573847453233330105890470844482405072957615231969369459908387717689164043268
+
+# https://ipsc.ksp.sk/2013/real/problems/c.html
+# slow version of phi(1234567)+1
+efficiency12:
+  expression: efficiency12.icfp
+  answer: 1224721
+
+# Generating a long string and then computing the length
+efficiency13:
+  expression: memorybomb.icfp
+  answer: 536870919

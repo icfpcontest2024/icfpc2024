@@ -1,0 +1,35 @@
+cabal-version:      2.4
+name:               icfpc2024
+version:            0.1.0.0
+author:             Jeroen Bransen
+
+library
+    exposed-modules:    ICFPC2024.AST,
+                        ICFPC2024.Printer,
+                        ICFPC2024.Parser,
+                        ICFPC2024.Interpreter,
+                        ICFPC2024.EvaluationExamples,
+                        ICFPC2024.Compression
+    default-extensions: OverloadedStrings
+                        RankNTypes
+                        ScopedTypeVariables
+                        NumericUnderscores
+                        LambdaCase
+                        Strict
+    build-depends:      base,
+                        mtl,
+                        containers,
+                        bytestring,
+    hs-source-dirs:     .
+    default-language:   Haskell2010
+    ghc-options:        -Wall -O2
+
+executable icfpc2024-interpreter
+    main-is: Main.hs
+    build-depends:
+        base,
+        bytestring,
+        icfpc2024,
+    hs-source-dirs: src-main
+    default-language: Haskell2010
+    ghc-options: -Wall -O2 -threaded -rtsopts
