@@ -80,3 +80,9 @@ If you want to abuse the fact that you have our code, you could use some command
 * `stack exec -- icfpc2024-interpreter encode` will ICFP-encode a string from the stdin
 * `stack exec -- icfpc2024-interpreter eval` will parse and evaluate an ICFP from the stdin
 * `stack exec -- ttop --print-states board.brd` will run 3D evaluation for `board.brd`. By default it takes `A = 6` and `B = 7`, but you can pass other values as extra argument to the command.
+
+# Contest data
+
+In `sql/data_dump.sqlite` there is a dump of all raw scores of the contest, which should allow you to reconstruct the final scoreboard of the contest. Note that only the relevant submissions have been included, and that some fields have been made nullable to make the dump as small as possible, so not all server functionality might work when using this dump.
+
+Furthermore, in the `solutions` directory we have put the overall best solution for each of the problems of the contest.
